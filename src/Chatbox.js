@@ -5,7 +5,6 @@ function Chatbox(props) {
   function onSubmit(e) {
     e.preventDefault();
     console.log(text);
-    localStorage.setItem('username', text);
     setText('');
   }
   const chatBubleList = Array(30)

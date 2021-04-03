@@ -21,9 +21,16 @@ body {
   width: 100%;
 }
 .modal {
-  background: rgba(0, 0, 0, 0.185);
+  height: 100%;
+  width: 100%;
+  background: rgb(224, 86, 86);
   z-index: 3;
+  display: flex;
   position: absolute;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 /* .chatbox {
 
@@ -56,4 +63,8 @@ body {
 .chatbox .text_input_form form button {
   width: 20%;
   height: 100%;
+}
+
+.modal {
+  background: 'red';
 }

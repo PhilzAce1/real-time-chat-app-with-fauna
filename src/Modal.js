@@ -1,21 +1,36 @@
 import React, { useEffect } from 'react';
 
 function Modal(props) {
-  //   const [display, setDisplay] = useState(false);
+  const savedUsername =
+    localStorage.getItem('username') === 'null' ||
+    localStorage.username === undefined;
+  const [username, setUsername] = React.useState('');
+  const [displayModal, setDisplayModal] = React.useState(savedUsername);
+  function onSubmitUsername(e) {
+    e.preventDefault();
+    localStorage.setItem('username', username);
+    setDisplayModal(false);
+  }
 
-  const username = localStorage.getItem('username');
-  useEffect(() => {
-    console.log(username);
-    console.log('Hello Modal');
-  }, [username]);
+  useEffect(() => {}, [displayModal]);
   return (
     <div
       className="modal"
       style={{
-        display: !username ? 'block' : 'none',
+        display: displayModal === true ? 'flex' : 'none',
       }}
     >
-      Modal
+      <div>What is your Username ?</div>
+      <form onSubmit={onSubmitUsername}>
+        <input
+          value={username}
+          type="text"
+          onChange={(e) => {
+            setUsername(e.target.value);
+          }}
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
