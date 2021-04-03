@@ -1,38 +1,59 @@
-.App {
+body {
+  background: rgb(184, 184, 184);
+}
+.container {
   text-align: center;
+  margin-top: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70%;
+  width: 500px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid green;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modal,
+.chatbox {
+  height: 100%;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal {
+  background: rgba(0, 0, 0, 0.185);
+  z-index: 3;
+  position: absolute;
 }
+/* .chatbox {
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+} */
+.chatbox .header {
+  font-size: 2em;
+  background: rgba(23, 23, 184, 0.87);
+  height: 10%;
+}
+.chatbox .chat_body {
+  height: 80%;
+  background: green;
+  overflow-y: auto;
+}
+.chatbox .text_input_form {
+  height: 10%;
+}
+.chatbox .text_input_form form {
+  height: 100%;
+  width: 100%;
+  background-color: yellow;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.chatbox .text_input_form form input {
+  /* height: 100%; */
+  color: black;
+  width: 80%;
+  font-size: 1.4em;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chatbox .text_input_form form button {
+  width: 20%;
+  height: 100%;
 }
