@@ -55,7 +55,6 @@ function ChatBubble({ name, text, date, mine }) {
     >
       <header>From:{name}</header>
       <div>{text}</div>
-      <div>{date}</div>
     </div>
   );
 }
