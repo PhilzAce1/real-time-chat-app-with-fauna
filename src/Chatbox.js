@@ -15,6 +15,7 @@ function Chatbox(props) {
         from="Philemon"
         text="Hello world"
         date="21-11-2020"
+        mine={true}
       />
     ));
   return (
@@ -37,15 +38,14 @@ function Chatbox(props) {
   );
 }
 
-function ChatBubble({ name, text, date }) {
+function ChatBubble({ name, text, date, mine }) {
+  const fromMe = `${mine ? 'marginLeft' : 'marginRight'}`;
   return (
     <div
       style={{
-        // marginRight: 'auto',
         marginTop: '10px',
         marginBottom: '10px',
-        //
-        marginLeft: 'auto',
+        [fromMe]: 'auto',
         background: 'yellow',
         width: '50%',
         borderRadius: '20px',
@@ -55,7 +55,6 @@ function ChatBubble({ name, text, date }) {
     >
       <header>From:{name}</header>
       <div>{text}</div>
-      <div>{date}</div>
     </div>
   );
 }

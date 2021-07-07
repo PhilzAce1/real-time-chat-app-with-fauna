@@ -1,15 +1,24 @@
 import React, { useEffect } from 'react';
 
 function Modal(props) {
+  /**
+     savedUsername returns a boolean that returns true, if there is no username saved in localStarage
+    */
   const savedUsername =
     localStorage.getItem('username') === 'null' ||
     localStorage.username === undefined;
+
+  /**
+    useState is a React hook used for State management
+    * username is used to manage controlled element value, "Input field"
+    * displayModal is a boolean that toggles the modal
+ */
   const [username, setUsername] = React.useState('');
   const [displayModal, setDisplayModal] = React.useState(savedUsername);
   function onSubmitUsername(e) {
-    e.preventDefault();
-    localStorage.setItem('username', username);
-    setDisplayModal(false);
+    e.preventDefault(); // prevent window from reloading on form submit
+    localStorage.setItem('username', username); // set the username to localStarage
+    setDisplayModal(false); // toggle modal
   }
 
   useEffect(() => {}, [displayModal]);
