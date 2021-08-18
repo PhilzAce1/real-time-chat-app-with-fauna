@@ -42,7 +42,7 @@ body {
 }
 .chatbox .chat_body {
   height: 80%;
-  background: green;
+  background: rgb(158, 169, 189);
   overflow-y: auto;
 }
 .chatbox .text_input_form {
